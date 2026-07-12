@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="610" viewBox="0 0 1180 610" role="img" aria-labelledby="title desc">
+  <title id="title">ToxicityRadius — developer profile</title>
+  <desc id="desc">Animated premium terminal profile banner for ToxicityRadius.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#030712"/><stop offset=".52" stop-color="#07111f"/><stop offset="1" stop-color="#030712"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#7C3AED"><animate attributeName="stop-color" values="#7C3AED;#22D3EE;#10B981;#7C3AED" dur="9s" repeatCount="indefinite"/></stop>
+      <stop offset=".5" stop-color="#22D3EE"><animate attributeName="stop-color" values="#22D3EE;#10B981;#7C3AED;#22D3EE" dur="9s" repeatCount="indefinite"/></stop>
+      <stop offset="1" stop-color="#10B981"><animate attributeName="stop-color" values="#10B981;#7C3AED;#22D3EE;#10B981" dur="9s" repeatCount="indefinite"/></stop>
+      <animate attributeName="x1" values="0;1;0" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;0;1" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff" stop-opacity=".06"/><stop offset=".45" stop-color="#22D3EE" stop-opacity=".7"/><stop offset=".55" stop-color="#A78BFA" stop-opacity=".75"/><stop offset="1" stop-color="#fff" stop-opacity=".06"/><animate attributeName="x1" values="-1;1" dur="6s" repeatCount="indefinite"/><animate attributeName="x2" values="0;2" dur="6s" repeatCount="indefinite"/></linearGradient>
+    <radialGradient id="blue"><stop stop-color="#2563EB" stop-opacity=".24"/><stop offset="1" stop-color="#2563EB" stop-opacity="0"/></radialGradient>
+    <radialGradient id="purple"><stop stop-color="#7C3AED" stop-opacity=".22"/><stop offset="1" stop-color="#7C3AED" stop-opacity="0"/></radialGradient>
+    <radialGradient id="emerald"><stop stop-color="#10B981" stop-opacity=".15"/><stop offset="1" stop-color="#10B981" stop-opacity="0"/></radialGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".09"/><stop offset=".22" stop-color="#fff" stop-opacity=".02"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#000" flood-opacity=".48"/></filter>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".78" numOctaves="3" seed="8"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .035 0"/></filter>
+    <clipPath id="frame"><rect width="1180" height="610" rx="28"/></clipPath>
+    <clipPath id="portraitClip"><rect x="42" y="75" width="366" height="458" rx="22"/></clipPath>
+    <mask id="portraitReveal"><rect x="55" y="95" width="335" height="0" fill="white"><animate attributeName="height" values="0;420;420" keyTimes="0;.78;1" dur="5s" fill="freeze"/></rect></mask>
+    <clipPath id="t1"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;165;165;0;0" keyTimes="0;.15;.19;.2;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t2"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;150;150;0;0" keyTimes="0;.2;.35;.39;.4;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t3"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;195;195;0;0" keyTimes="0;.4;.55;.59;.6;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t4"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;220;220;0;0" keyTimes="0;.6;.75;.79;.8;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t5"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;190;190;0" keyTimes="0;.8;.95;.99;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <style>
+      text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}.muted{fill:#94A3B8}.primary{fill:#F8FAFC}.label{fill:#64748B;font-size:12px;letter-spacing:1.5px;font-weight:700}.pill{fill:#0F172A;stroke:#22D3EE;stroke-opacity:.22}.pillText{fill:#CBD5E1;font-size:12px;font-weight:650}.ascii{fill:url(#accent);font-size:16px;font-weight:700;letter-spacing:.5px}.row{opacity:0}.icon{fill:none;stroke:#CBD5E1;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="1180" height="610" fill="url(#bg)"/>
+    <ellipse cx="104" cy="48" rx="330" ry="250" fill="url(#blue)"><animateTransform attributeName="transform" type="translate" values="0 0;55 28;0 0" dur="14s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="965" cy="86" rx="310" ry="255" fill="url(#purple)"><animateTransform attributeName="transform" type="translate" values="0 0;-42 34;0 0" dur="17s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="760" cy="600" rx="380" ry="230" fill="url(#emerald)"><animateTransform attributeName="transform" type="translate" values="0 0;38 -25;0 0" dur="19s" repeatCount="indefinite"/></ellipse>
+    <rect width="1180" height="610" filter="url(#noise)" opacity=".7"/>
+    <g opacity=".65" fill="#67E8F9">
+      <circle r="1.3"><animateMotion dur="13s" repeatCount="indefinite" path="M90 570 C180 430 100 240 230 90"/><animate attributeName="opacity" values="0;.8;0" dur="4s" repeatCount="indefinite"/></circle>
+      <circle r="1"><animateMotion dur="17s" repeatCount="indefinite" path="M650 620 C710 480 625 250 760 -20"/><animate attributeName="opacity" values=".1;.7;.1" dur="5s" repeatCount="indefinite"/></circle>
+      <circle r="1.4"><animateMotion dur="15s" repeatCount="indefinite" path="M1100 580 C980 430 1120 220 970 20"/><animate attributeName="opacity" values="0;.8;0" dur="6s" repeatCount="indefinite"/></circle>
+      <circle r=".9"><animateMotion dur="11s" repeatCount="indefinite" path="M490 620 C400 440 530 220 430 -20"/></circle>
+    </g>
+    <g filter="url(#shadow)">
+      <rect x="26" y="25" width="1128" height="560" rx="28" fill="#07101e" fill-opacity=".72" stroke="url(#border)" stroke-width="1.2"/>
+      <rect x="27" y="26" width="1126" height="150" rx="27" fill="url(#glass)"/>
+    </g>
+    <g>
+      <rect x="42" y="75" width="366" height="458" rx="22" fill="#08111f" fill-opacity=".78" stroke="#fff" stroke-opacity=".08"/>
+      <rect x="59" y="91" width="104" height="25" rx="12.5" fill="#0F172A" stroke="#22D3EE" stroke-opacity=".25"/>
+      <circle cx="74" cy="103.5" r="3.5" fill="#10B981"><animate attributeName="opacity" values=".35;1;.35" dur="1.8s" repeatCount="indefinite"/></circle>
+      <text x="84" y="108" class="mono muted" font-size="10">IDENTITY.SYS</text>
+      <g mask="url(#portraitReveal)">
+        <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="6s" repeatCount="indefinite"/>
+          <text x="75" y="151" class="mono ascii">          .::::.</text><text x="75" y="174" class="mono ascii">       .::::::::::.</text>
+          <text x="75" y="197" class="mono ascii">      ::::::::::::::</text><text x="75" y="220" class="mono ascii">     :::  ▓▓▓▓▓  :::</text>
+          <text x="75" y="243" class="mono ascii">     ::  ▓██████▓  ::</text><text x="75" y="266" class="mono ascii">     :  ▓██ ◉ ◉██▓  :</text>
+          <text x="75" y="289" class="mono ascii">     :  ▓██  ▴ ██▓  :</text><text x="75" y="312" class="mono ascii">     ::  ▓██████▓  ::</text>
+          <text x="75" y="335" class="mono ascii">      ::: ▓▓▓▓ :::</text><text x="75" y="358" class="mono ascii">        ╲██████╱</text>
+          <text x="75" y="381" class="mono ascii">      ╭──████████──╮</text><text x="75" y="404" class="mono ascii">     ╱ ████████████ ╲</text>
+          <text x="75" y="427" class="mono ascii">    ╱  ███ CYBER ███  ╲</text><text x="75" y="450" class="mono ascii">   ╱___████████████___╲</text>
+        </g>
+      </g>
+      <rect x="43" y="120" width="364" height="2" fill="url(#accent)" opacity=".3" filter="url(#glow)"><animate attributeName="y" values="120;520;120" dur="5.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.6;0" dur="5.5s" repeatCount="indefinite"/></rect>
+      <text x="74" y="493" class="mono muted" font-size="11">root@toxicityradius:~$ online</text>
+      <rect x="332" y="481" width="8" height="14" rx="1" fill="#22D3EE"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+    </g>
+    <g>
+      <rect x="432" y="54" width="700" height="502" rx="22" fill="#0F172A" fill-opacity=".82" stroke="#fff" stroke-opacity=".09"/>
+      <rect x="432" y="54" width="700" height="45" rx="22" fill="#111C30"/><rect x="432" y="77" width="700" height="22" fill="#111C30"/>
+      <circle cx="458" cy="77" r="5" fill="#FB7185"/><circle cx="478" cy="77" r="5" fill="#FBBF24"/><circle cx="498" cy="77" r="5" fill="#34D399"/>
+      <text x="782" y="81" text-anchor="middle" class="mono muted" font-size="10">profile — zsh — 1180×610</text>
+      <text x="466" y="137" class="primary" font-size="17" font-weight="650">Hi 👋</text>
+      <text x="466" y="179" class="primary" font-size="32" font-weight="800">I'm <tspan fill="url(#accent)">ToxicityRadius</tspan></text>
+      <text x="466" y="211" class="mono muted" font-size="13">&gt; </text>
+      <g class="mono" font-size="14" font-weight="650" fill="#67E8F9">
+        <text x="486" y="211" clip-path="url(#t1)">Full Stack Developer</text>
+        <text x="486" y="211" clip-path="url(#t2)">Applied AI Builder</text>
+        <text x="486" y="211" clip-path="url(#t3)">Open Source Contributor</text>
+        <text x="486" y="211" clip-path="url(#t4)">Machine Learning Engineer</text>
+        <text x="486" y="211" clip-path="url(#t5)">UI Systems Enthusiast</text>
+      </g>
+      <rect x="677" y="198" width="7" height="16" rx="1" fill="#22D3EE"><animate attributeName="opacity" values="1;0;1" dur=".85s" repeatCount="indefinite"/></rect>
+      <line x1="466" y1="232" x2="1097" y2="232" stroke="#fff" stroke-opacity=".07"/>
+      <g class="mono" font-size="11">
+        <g class="row"><text x="466" y="261" class="label">LOCATION</text><text x="570" y="261" class="primary">Philippines</text><animate attributeName="opacity" from="0" to="1" begin="1.1s" dur=".45s" fill="freeze"/></g>
+        <g class="row"><text x="466" y="284" class="label">EDUCATION</text><text x="570" y="284" class="primary">TIP · Computing</text><animate attributeName="opacity" from="0" to="1" begin="1.35s" dur=".45s" fill="freeze"/></g>
+        <g class="row"><text x="466" y="307" class="label">FOCUS</text><text x="570" y="307" class="primary">Applied AI · full-stack systems</text><animate attributeName="opacity" from="0" to="1" begin="1.6s" dur=".45s" fill="freeze"/></g>
+        <g class="row"><text x="466" y="330" class="label">PORTFOLIO</text><text x="570" y="330" fill="#67E8F9">toxicityradius.github.io</text><animate attributeName="opacity" from="0" to="1" begin="1.85s" dur=".45s" fill="freeze"/></g>
+        <g class="row"><text x="466" y="353" class="label">EMAIL</text><text x="570" y="353" class="primary">mdasoriano01@tip.edu.ph</text><animate attributeName="opacity" from="0" to="1" begin="2.1s" dur=".45s" fill="freeze"/></g>
+      </g>
+      <text x="466" y="390" class="label">TOOLKIT</text>
+      <g transform="translate(466 407)">
+        <g><rect class="pill" width="67" height="27" rx="13.5"/><text class="pillText" x="33.5" y="18" text-anchor="middle">React</text><animateTransform attributeName="transform" type="scale" from="1" to="1.06" begin="mouseover" dur=".18s" fill="freeze"/><animateTransform attributeName="transform" type="scale" from="1.06" to="1" begin="mouseout" dur=".18s" fill="freeze"/></g>
+        <g transform="translate(76)"><rect class="pill" width="74" height="27" rx="13.5"/><text class="pillText" x="37" y="18" text-anchor="middle">Next.js</text></g>
+        <g transform="translate(159)"><rect class="pill" width="74" height="27" rx="13.5"/><text class="pillText" x="37" y="18" text-anchor="middle">Node.js</text></g>
+        <g transform="translate(242)"><rect class="pill" width="90" height="27" rx="13.5"/><text class="pillText" x="45" y="18" text-anchor="middle">TypeScript</text></g>
+        <g transform="translate(341)"><rect class="pill" width="70" height="27" rx="13.5"/><text class="pillText" x="35" y="18" text-anchor="middle">Python</text></g>
+        <g transform="translate(420)"><rect class="pill" width="70" height="27" rx="13.5"/><text class="pillText" x="35" y="18" text-anchor="middle">Docker</text></g>
+        <g transform="translate(0 38)"><rect class="pill" width="74" height="27" rx="13.5"/><text class="pillText" x="37" y="18" text-anchor="middle">Postgres</text></g>
+        <g transform="translate(83 38)"><rect class="pill" width="54" height="27" rx="13.5"/><text class="pillText" x="27" y="18" text-anchor="middle">AWS</text></g>
+        <g transform="translate(146 38)"><rect class="pill" width="47" height="27" rx="13.5"/><text class="pillText" x="23.5" y="18" text-anchor="middle">Git</text></g>
+        <g transform="translate(202 38)"><rect class="pill" width="63" height="27" rx="13.5"/><text class="pillText" x="31.5" y="18" text-anchor="middle">Figma</text></g>
+      </g>
+      <line x1="466" y1="489" x2="1097" y2="489" stroke="#fff" stroke-opacity=".07"/>
+      <g transform="translate(466 507)" class="mono" font-size="11" font-weight="650">
+        <g><rect width="102" height="29" rx="14.5" fill="#fff" fill-opacity=".035" stroke="#fff" stroke-opacity=".08"/><text x="51" y="19" text-anchor="middle" class="primary">◉ GitHub</text></g>
+        <g transform="translate(113)"><rect width="102" height="29" rx="14.5" fill="#fff" fill-opacity=".035" stroke="#fff" stroke-opacity=".08"/><text x="51" y="19" text-anchor="middle" class="primary">in LinkedIn</text></g>
+        <g transform="translate(226)"><rect width="82" height="29" rx="14.5" fill="#fff" fill-opacity=".035" stroke="#fff" stroke-opacity=".08"/><text x="41" y="19" text-anchor="middle" class="primary">𝕏 Twitter</text></g>
+        <g transform="translate(319)"><rect width="109" height="29" rx="14.5" fill="#fff" fill-opacity=".035" stroke="#fff" stroke-opacity=".08"/><text x="54.5" y="19" text-anchor="middle" class="primary">↗ Portfolio</text></g>
+      </g>
+      <rect x="432" y="54" width="700" height="502" rx="22" fill="none" stroke="url(#border)" stroke-opacity=".65"><animate attributeName="stroke-opacity" values=".35;.85;.35" dur="5s" repeatCount="indefinite"/></rect>
+    </g>
+  </g>
+</svg>
