@@ -28,7 +28,7 @@
     <clipPath id="t4"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;220;220;0;0" keyTimes="0;.6;.75;.79;.8;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
     <clipPath id="t5"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;190;190;0" keyTimes="0;.8;.95;.99;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
     <style>
-      text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}.muted{fill:#94A3B8}.primary{fill:#F8FAFC}.label{fill:#64748B;font-size:13px;letter-spacing:1.4px;font-weight:750}.pill{fill:#0F172A;stroke:#22D3EE;stroke-opacity:.22}.pillText{fill:#CBD5E1;font-size:14px;font-weight:650}.ascii{fill:url(#accent);font-size:15px;font-weight:700;letter-spacing:.2px}.row{opacity:0}.icon{fill:none;stroke:#CBD5E1;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+      text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.mono,.mono text{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}.muted{fill:#94A3B8}.primary{fill:#F8FAFC}.label{fill:#64748B;font-size:13px;letter-spacing:1.4px;font-weight:750}.pill{fill:#0F172A;stroke:#22D3EE;stroke-opacity:.22}.pillText{fill:#CBD5E1;font-size:14px;font-weight:650}.ascii{fill:url(#accent);font-size:15px;font-weight:700;letter-spacing:.2px}.row{opacity:0}.icon{fill:none;stroke:#CBD5E1;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
     </style>
   </defs>
   <g clip-path="url(#frame)">
@@ -53,29 +53,41 @@
       <circle cx="74" cy="103.5" r="3.5" fill="#10B981"><animate attributeName="opacity" values=".35;1;.35" dur="1.8s" repeatCount="indefinite"/></circle>
       <text x="84" y="108" class="mono muted" font-size="10">IDENTITY.VERIFIED</text>
       <g mask="url(#portraitReveal)">
-        <g class="mono ascii" font-size="12"><animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="6s" repeatCount="indefinite"/>
-          <text x="72" y="148">            ..,,,,,,..</text>
-          <text x="72" y="162">         .,/||||||||||\,.</text>
-          <text x="72" y="176">       .,/||||||||||||||\,.</text>
-          <text x="72" y="190">      ,/||||||||||||||||||\,</text>
-          <text x="72" y="204">     /||||||\,,......,,/||||||\</text>
-          <text x="72" y="218">    /|||||/.          .\|||||\</text>
-          <text x="72" y="232">   ||||||.   ,,    ,,   .||||||</text>
-          <text x="72" y="246">   ||||||.   ||    ||   .||||||</text>
-          <text x="72" y="260">   ||||||,      ..      ,||||||</text>
-          <text x="72" y="274">   ||||||\,    ,,,,    ,/||||||</text>
-          <text x="72" y="288">    \||||||\,.      .,/||||||/</text>
-          <text x="72" y="302">      \||||||,,,,,,,,||||||/</text>
-          <text x="72" y="316">       .\||||||||||||||||/.</text>
-          <text x="72" y="330">          \||||||||||/</text>
-          <text x="72" y="344">       .,/||||||||||||||\,.</text>
-          <text x="72" y="358">     .,/||||||||||||||||||\,.</text>
-          <text x="72" y="372">    /||||||||||\..,/||||||||||\</text>
-          <text x="72" y="386">   /|||||||||||/||\|||||||||||\</text>
-          <text x="72" y="400">  /||||||||||||||||||||||||||||\</text>
-          <text x="72" y="414">  ||||||||||||\||||/||||||||||||</text>
-          <text x="72" y="428">  |||||||||||||\,/||||||||||||||</text>
-          <text x="72" y="442">  ||||||||||||||||||||||||||||||</text>
+        <g class="mono ascii" style="font-size:10px;font-weight:650;letter-spacing:0"><animateTransform attributeName="transform" type="translate" values="0 0;0 -5;0 0" dur="6s" repeatCount="indefinite"/>
+          <text x="189" y="132">///|\||/||\\\\</text>
+          <text x="171" y="142">//|\||/||\||/||\|\\\</text>
+          <text x="159" y="152">//||/||\||/||\||/||\|\\</text>
+          <text x="153" y="162">//||\||/||\||/||\||/||\|</text>
+          <text x="147" y="172">/\||/||\/////////\\\\|/||\\</text>
+          <text x="141" y="182">|/||\\/////,.,.,.,.,.\\\|/||\</text>
+          <text x="141" y="192">/||////,,,,.,,,,,.,,,,,|\||/|</text>
+          <text x="141" y="202">||\||,.,.,.,.,.,.,.,,,.,\|\||</text>
+          <text x="141" y="212">|,,,,/||||\,,,,,,,/||||\,,,,|</text>
+          <text x="141" y="222">|,,,,\,|,/,,,,,,,,,\,|,/,,,,|</text>
+          <text x="141" y="232">|,,,,,,,,,,,,,,,,,,,,,,,,,,,|</text>
+          <text x="141" y="242">|,,,,,,,,,,,,,|,,,,,,,,,,,,,|</text>
+          <text x="141" y="252">|,,,,,,,,,,,,/|\,,,,,,,,,,,,|</text>
+          <text x="141" y="262">|,,,,,,,,,,,,\|/,,,,,,,,,,,,|</text>
+          <text x="141" y="272">|,,,,,,,,,,,,,\/,,,,,,,,,,,,|</text>
+          <text x="141" y="282">|,,,,,,,,,\,.....,/,,,,,,,,,|</text>
+          <text x="147" y="292">\,,,,,,,,,,/||||\,,,,,,,,,,/</text>
+          <text x="153" y="302">\,,,,,,,,,,,,,,,,,,,,,,,/</text>
+          <text x="153" y="312">\,,,,,,,,,,,,,,,,,,,,,/</text>
+          <text x="159" y="322">\\,,,,,,,,,,,,,,,,,,//</text>
+          <text x="165" y="332">\||,,,,,,,,,,,,,,||/</text>
+          <text x="171" y="342">\|||||,,,,,,,,|||||/</text>
+          <text x="165" y="352">/||||\,,,,,,,,,,/||||\</text>
+          <text x="159" y="362">/|||||\,,,,,,,,,,,,/|||||\</text>
+          <text x="135" y="372">///|||||||||\,,,,,,,,/|||||||||\\\</text>
+          <text x="117" y="382">////|||||||||||\,,,,,,,,/|||||||||||\\\\</text>
+          <text x="93" y="392">////||||||||||||||\,,,,,,,,/||||||||||||||\\\\</text>
+          <text x="81" y="402">||||||||||||||||\,,,,,/||\,,,,,/||||||||||||||||</text>
+          <text x="81" y="412">||||||||||||||||\,,,,/||||\,,,,/||||||||||||||||</text>
+          <text x="81" y="422">|||||||||||||||||||||/,..,\|||||||||||||||||||||</text>
+          <text x="81" y="432">|||||||||||||||||||||\,,,,/|||||||||||||||||||||</text>
+          <text x="81" y="442">||||||||||||||||||||/,,,,,,\||||||||||||||||||||</text>
+          <text x="81" y="452">|||||||||||||||||||/,,,,,,,,\|||||||||||||||||||</text>
+          <text x="81" y="462">||||||||||||||||||/,,,,,,,,,,\||||||||||||||||||</text>
         </g>
       </g>
       <rect x="43" y="120" width="364" height="2" fill="url(#accent)" opacity=".3" filter="url(#glow)"><animate attributeName="y" values="120;520;120" dur="5.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.6;0" dur="5.5s" repeatCount="indefinite"/></rect>
