@@ -157,6 +157,8 @@ def choose_character(
     if luminance >= 249 and edge < 0.08 and contrast < 0.08:
         return " "
     if edge * weight > 0.48 and 0.03 < darkness < 0.94:
+        if coverage_floor >= 0.95:
+            return "▓"
         return directional_character(gx, gy)
 
     density = min(1.0, darkness * 0.86 + contrast * 0.07 + edge * weight * 0.10)
@@ -174,8 +176,8 @@ def cyber_color(rgb: tuple[int, int, int], x: float) -> tuple[int, int, int]:
         t = (x - 0.5) * 2
         left, right = (34, 211, 238), (16, 185, 129)
     accent = tuple(round(left[i] + (right[i] - left[i]) * t) for i in range(3))
-    brightness = 0.78 + 0.45 * (luminance / 255.0)
-    return tuple(min(255, round(channel * brightness + 18)) for channel in accent)
+    brightness = 0.58 + 0.56 * (luminance / 255.0)
+    return tuple(min(255, round(channel * brightness + 10)) for channel in accent)
 
 
 def realistic_color(rgb: tuple[int, int, int]) -> tuple[int, int, int]:
@@ -224,7 +226,11 @@ def build_grid(
     coverage_floor: float,
 ) -> tuple[list[list[str]], list[list[str]], float, float, float]:
     rows, cell_width, font_size, line_height = grid_geometry(columns)
-    sampled = image.resize((columns, rows), Image.Resampling.LANCZOS)
+    detail = ImageEnhance.Contrast(image).enhance(1.12)
+    detail = detail.filter(
+        ImageFilter.UnsharpMask(radius=1.1, percent=80, threshold=4)
+    )
+    sampled = detail.resize((columns, rows), Image.Resampling.LANCZOS)
     grayscale = ImageOps.grayscale(image)
     grayscale = ImageEnhance.Contrast(grayscale).enhance(1.08)
     grayscale = grayscale.filter(ImageFilter.UnsharpMask(radius=1.1, percent=75, threshold=3))
@@ -252,7 +258,14 @@ def build_grid(
             )
             glyph_row.append(glyph)
             red, green, blue = color_pixels[index]
-            if glyph in "│─╱╲":
+            if glyph == "▓" and coverage_floor >= 0.95:
+                edge_factor = 0.68 if palette == "cyber" else 0.72
+                red, green, blue = (
+                    round(red * edge_factor),
+                    round(green * edge_factor),
+                    round(blue * edge_factor),
+                )
+            elif glyph in "│─╱╲":
                 edge_factor = 0.72 if palette == "cyber" else 0.55
                 red, green, blue = (
                     round(red * edge_factor),
