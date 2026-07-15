@@ -22,11 +22,11 @@
     <clipPath id="frame"><rect width="1180" height="610" rx="28"/></clipPath>
     <clipPath id="portraitClip"><rect x="42" y="75" width="366" height="458" rx="22"/></clipPath>
     <mask id="portraitReveal"><rect x="45" y="118" width="360" height="0" fill="white"><animate attributeName="height" values="0;360;360" keyTimes="0;.72;1" dur="4s" fill="freeze"/></rect></mask>
-    <clipPath id="t1"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;165;165;0;0" keyTimes="0;.15;.19;.2;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="t2"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;150;150;0;0" keyTimes="0;.2;.35;.39;.4;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="t3"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;195;195;0;0" keyTimes="0;.4;.55;.59;.6;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="t4"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;220;220;0;0" keyTimes="0;.6;.75;.79;.8;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
-    <clipPath id="t5"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;190;190;0" keyTimes="0;.8;.95;.99;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t1"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;200;200;0;0" keyTimes="0;.15;.19;.2;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t2"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;180;180;0;0" keyTimes="0;.2;.35;.39;.4;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t3"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;230;230;0;0" keyTimes="0;.4;.55;.59;.6;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t4"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;250;250;0;0" keyTimes="0;.6;.75;.79;.8;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
+    <clipPath id="t5"><rect x="486" y="194" width="0" height="24"><animate attributeName="width" values="0;0;210;210;0" keyTimes="0;.8;.95;.99;1" dur="20s" repeatCount="indefinite"/></rect></clipPath>
     <style>
       text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.mono,.mono text{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}.muted{fill:#94A3B8}.primary{fill:#F8FAFC}.label{fill:#64748B;font-size:13px;letter-spacing:1.4px;font-weight:750}.pill{fill:#0F172A;stroke:#22D3EE;stroke-opacity:.22}.pillText{fill:#CBD5E1;font-size:14px;font-weight:650}.ascii{fill:url(#accent);font-size:15px;font-weight:700;letter-spacing:.2px}.row{opacity:0}.icon{fill:none;stroke:#CBD5E1;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
     </style>
@@ -2721,7 +2721,7 @@
         <text x="486" y="211" clip-path="url(#t4)">Machine Learning Engineer</text>
         <text x="486" y="211" clip-path="url(#t5)">UI Systems Enthusiast</text>
       </g>
-      <rect x="677" y="198" width="7" height="16" rx="1" fill="#22D3EE"><animate attributeName="opacity" values="1;0;1" dur=".85s" repeatCount="indefinite"/></rect>
+      <rect x="486" y="198" width="7" height="16" rx="1" fill="#22D3EE"><animate attributeName="x" values="486;688;688;486;668;668;486;718;718;486;738;738;486;698;698;486" keyTimes="0;.15;.19;.2;.35;.39;.4;.55;.59;.6;.75;.79;.8;.95;.99;1" dur="20s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur=".85s" repeatCount="indefinite"/></rect>
       <line x1="466" y1="232" x2="1097" y2="232" stroke="#fff" stroke-opacity=".07"/>
       <g class="mono" font-size="14">
         <g class="row"><text x="466" y="261" class="label">LOCATION</text><text x="585" y="261" class="primary">Philippines</text><animate attributeName="opacity" from="0" to="1" begin="1.1s" dur=".45s" fill="freeze"/></g>
