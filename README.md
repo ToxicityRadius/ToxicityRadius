@@ -17,11 +17,11 @@ A CLI for inspecting web accessibility issues and checking proposed repairs with
 
 <sub>TypeScript · Playwright · axe-core · Developer tooling</sub>
 
-### [BantayBayan](https://github.com/ToxicityRadius/IoT-Competition)
+### [Student Advising Portal](https://github.com/ToxicityRadius/Student-Advising-Portal)
 
-A climate monitoring and control prototype connecting an Arduino sensor node to a Flask dashboard. My work connects the firmware, sensor uploads, and acknowledged LED and buzzer commands.
+A full-stack academic advising platform for Computer Engineering programs, with role-based curriculum, student-record, and study-plan workflows. I contributed features across the platform, including grade handling, study-plan regeneration, and authentication and access-control improvements.
 
-<sub>Arduino · ESP8266 · Python · Flask · SQLite</sub>
+<sub>React · Node.js · Express · PostgreSQL</sub>
 
 ### [Personal portfolio](https://github.com/ToxicityRadius/toxicityradius.github.io)
 
@@ -40,7 +40,7 @@ A closer look at my public work. Each graphic carries its own update date; langu
 
 <p>
   <a href="https://github.com/ToxicityRadius?tab=overview"><img src="./assets/metrics/contributions.svg" width="400" alt="Contributions to public repositories, including my own projects."></a>
-  <a href="https://github.com/ToxicityRadius?tab=repositories"><img src="./assets/metrics/repositories.svg" width="400" alt="Featured public repositories: FormProof, BantayBayan, and my portfolio."></a>
+  <a href="https://github.com/ToxicityRadius?tab=repositories"><img src="./assets/metrics/repositories.svg" width="400" alt="Featured public repositories: FormProof, Student Advising Portal, and my portfolio."></a>
 </p>
 
 <p>
