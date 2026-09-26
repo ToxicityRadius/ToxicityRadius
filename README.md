@@ -47,4 +47,4 @@ A closer look at my public work. Each graphic carries its own update date; langu
   <a href="https://github.com/ToxicityRadius?tab=overview"><img src="./assets/metrics/calendar.svg" width="400" alt="Public commit calendar. The graphic labels its date range and latest update."></a>
 </p>
 
-<sub>Generated graphics powered by [Metrics](https://github.com/lowlighter/metrics). [Profile maintenance](./docs/PROFILE.md).</sub>
+<sub>[Explore all my repositories](https://github.com/ToxicityRadius?tab=repositories) · [Connect on LinkedIn](https://www.linkedin.com/in/dexter-aic-soriano-382063335/)</sub>
