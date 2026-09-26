@@ -29,12 +29,12 @@ svg { background: #f3f8fc; color: #344b63; }
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="287.7614699549146" height="8" fill="#DA5B0B"/>
-                    <rect mask="url(#languages-bar)" x="287.7614699549146" y="0" width="122.03731180733017" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="409.7987817622448" y="0" width="19.03732259910983" height="8" fill="#3572A5"/>
-                    <rect mask="url(#languages-bar)" x="428.8361043613546" y="0" width="11.694230119945125" height="8" fill="#e34c26"/>
-                    <rect mask="url(#languages-bar)" x="440.53033448129975" y="0" width="10.556056357756745" height="8" fill="#663399"/>
-                    <rect mask="url(#languages-bar)" x="451.08639083905643" y="0" width="8.913609160943537" height="8" fill="#3178c6"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="287.3895497703772" height="8" fill="#DA5B0B"/>
+                    <rect mask="url(#languages-bar)" x="287.3895497703772" y="0" width="121.87958346539843" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="409.2691332357756" y="0" width="19.607249213603207" height="8" fill="#3572A5"/>
+                    <rect mask="url(#languages-bar)" x="428.8763824493788" y="0" width="11.679115795484265" height="8" fill="#e34c26"/>
+                    <rect mask="url(#languages-bar)" x="440.5554982448631" y="0" width="10.5424130773371" height="8" fill="#663399"/>
+                    <rect mask="url(#languages-bar)" x="451.0979113222002" y="0" width="8.902088677799801" height="8" fill="#3178c6"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
@@ -46,7 +46,7 @@ svg { background: #f3f8fc; color: #344b63; }
                                 Jupyter Notebook
                             </div>
                             <small>
-                                <div>62.56%</div>
+                                <div>62.48%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -57,7 +57,7 @@ svg { background: #f3f8fc; color: #344b63; }
                                 Python
                             </div>
                             <small>
-                                <div>4.14%</div>
+                                <div>4.26%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -81,7 +81,7 @@ svg { background: #f3f8fc; color: #344b63; }
                                 JavaScript
                             </div>
                             <small>
-                                <div>26.53%</div>
+                                <div>26.5%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -111,7 +111,7 @@ svg { background: #f3f8fc; color: #344b63; }
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 26 Sept 2026, 17:23:43 (timezone Asia/Manila) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 26 Sept 2026, 17:28:14 (timezone Asia/Manila) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
