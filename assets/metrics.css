@@ -1,0 +1,9 @@
+/* A fixed canvas keeps every card legible in both GitHub themes. */
+svg { background: #f3f8fc; color: #344b63; }
+.items-wrapper { padding: 12px; }
+.items-wrapper * { color: inherit !important; }
+.items-wrapper h1, .items-wrapper h2, .items-wrapper h3 { color: #00788e !important; }
+@media (prefers-color-scheme: dark) {
+  svg { background: #101e31; color: #c0d0e3; }
+  .items-wrapper h1, .items-wrapper h2, .items-wrapper h3 { color: #67e8f9 !important; }
+}

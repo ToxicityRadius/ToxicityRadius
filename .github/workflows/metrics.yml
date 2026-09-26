@@ -1,0 +1,179 @@
+name: Profile metrics
+
+on:
+  schedule:
+    - cron: '23 0 * * *' # 08:23 Asia/Manila; GitHub schedules may be delayed.
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/metrics.yml'
+      - 'assets/metrics.css'
+      - 'scripts/publish_metrics.py'
+  pull_request:
+    paths:
+      - '.github/workflows/metrics.yml'
+      - 'assets/metrics.css'
+      - 'scripts/publish_metrics.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-metrics-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - run: python3 scripts/publish_metrics.py --self-test
+
+  render:
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Check public-only access
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "$GH_TOKEN" ]]; then
+            echo '::error::Add the METRICS_TOKEN Actions secret: a classic PAT with no scopes. See docs/PROFILE.md.'
+            exit 1
+          fi
+          headers=$(gh api --include user)
+          if ! grep -qi '^x-oauth-scopes:' <<< "$headers"; then
+            echo '::error::Use a classic token with no scopes for this public-only gallery.'
+            exit 1
+          fi
+          scopes=$(grep -i '^x-oauth-scopes:' <<< "$headers" | cut -d: -f2- | tr -d '[:space:]')
+          if [[ -n "$scopes" ]]; then
+            echo '::error::METRICS_TOKEN must have no scopes. The workflow uses GITHUB_TOKEN separately to commit.'
+            exit 1
+          fi
+          restricted=$(gh api graphql -f query='query { user(login:"ToxicityRadius") { contributionsCollection { restrictedContributionsCount } } }' --jq '.data.user.contributionsCollection.restrictedContributionsCount')
+          if [[ "$restricted" != '0' ]]; then
+            echo '::error::The contribution calendar contains private totals. Disable Private contributions in profile Contribution settings to keep this gallery public-only.'
+            exit 1
+          fi
+
+      - name: Load shared styles
+        id: style
+        shell: bash
+        run: |
+          echo 'css<<METRICS_CSS' >> "$GITHUB_OUTPUT"
+          cat assets/metrics.css >> "$GITHUB_OUTPUT"
+          echo 'METRICS_CSS' >> "$GITHUB_OUTPUT"
+
+      - name: Public activity
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest stable, verified 2026-09-26
+        with:
+          user: ToxicityRadius
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: activity.svg
+          output_action: none
+          base: metadata
+          config_timezone: Asia/Manila
+          config_animations: no
+          extras_css: ${{ steps.style.outputs.css }}
+          plugins_errors_fatal: yes
+          retries: 1
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 30
+          plugin_activity_visibility: public
+          plugin_activity_timestamps: yes
+          plugin_activity_skipped: ToxicityRadius/ToxicityRadius
+
+      - name: Repository languages
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          user: ToxicityRadius
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: languages.svg
+          output_action: none
+          base: metadata
+          config_timezone: Asia/Manila
+          config_animations: no
+          extras_css: ${{ steps.style.outputs.css }}
+          plugins_errors_fatal: yes
+          retries: 1
+          repositories_forks: no
+          plugin_languages: yes
+          plugin_languages_limit: 6
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_indepth: no
+
+      - name: Public contributions
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          user: ToxicityRadius
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: contributions.svg
+          output_action: none
+          base: metadata
+          config_timezone: Asia/Manila
+          config_animations: no
+          extras_css: ${{ steps.style.outputs.css }}
+          plugins_errors_fatal: yes
+          retries: 1
+          plugin_notable: yes
+          plugin_notable_from: all
+          plugin_notable_self: yes
+          plugin_notable_types: commit, pull_request, issue
+          plugin_notable_repositories: yes
+
+      - name: Featured repositories
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          user: ToxicityRadius
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: repositories.svg
+          output_action: none
+          base: metadata
+          config_timezone: Asia/Manila
+          config_animations: no
+          extras_css: ${{ steps.style.outputs.css }}
+          plugins_errors_fatal: yes
+          retries: 1
+          plugin_repositories: yes
+          plugin_repositories_featured: ToxicityRadius/FormProof, ToxicityRadius/IoT-Competition, ToxicityRadius/toxicityradius.github.io
+          plugin_repositories_order: featured
+
+      - name: Commit calendar
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          user: ToxicityRadius
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: calendar.svg
+          output_action: none
+          base: metadata
+          config_timezone: Asia/Manila
+          config_animations: no
+          extras_css: ${{ steps.style.outputs.css }}
+          plugins_errors_fatal: yes
+          retries: 1
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+      - name: Validate all renders before publishing
+        run: python3 scripts/publish_metrics.py /metrics_renders assets/metrics
+
+      - name: Commit successful update
+        shell: bash
+        run: |
+          git add -- assets/metrics/*.svg
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: refresh public profile metrics'
+          git push origin "HEAD:$GITHUB_REF_NAME"
