@@ -34,17 +34,17 @@ A responsive home for my computer vision, data, and web projects. I designed and
 A closer look at my public work. Each graphic carries its own update date; language usage describes repository contents, not proficiency.
 
 <p>
-  <a href="https://github.com/ToxicityRadius?tab=overview"><img src="./assets/metrics/activity.svg" width="440" alt="Public GitHub activity and recent events; open my GitHub overview for the source."></a>
-  <a href="https://github.com/ToxicityRadius?tab=repositories"><img src="./assets/metrics/languages.svg" width="440" alt="Languages used across my public repositories; open my repositories to explore the source."></a>
+  <a href="https://github.com/ToxicityRadius?tab=overview"><img src="./assets/metrics/activity.svg" width="400" alt="Public GitHub activity and recent events; open my GitHub overview for the source."></a>
+  <a href="https://github.com/ToxicityRadius?tab=repositories"><img src="./assets/metrics/languages.svg" width="400" alt="Languages used across my public repositories; open my repositories to explore the source."></a>
 </p>
 
 <p>
-  <a href="https://github.com/ToxicityRadius?tab=overview"><img src="./assets/metrics/contributions.svg" width="440" alt="Contributions to public repositories, including my own projects."></a>
-  <a href="https://github.com/ToxicityRadius?tab=repositories"><img src="./assets/metrics/repositories.svg" width="440" alt="Featured public repositories: FormProof, BantayBayan, and my portfolio."></a>
+  <a href="https://github.com/ToxicityRadius?tab=overview"><img src="./assets/metrics/contributions.svg" width="400" alt="Contributions to public repositories, including my own projects."></a>
+  <a href="https://github.com/ToxicityRadius?tab=repositories"><img src="./assets/metrics/repositories.svg" width="400" alt="Featured public repositories: FormProof, BantayBayan, and my portfolio."></a>
 </p>
 
 <p>
-  <a href="https://github.com/ToxicityRadius?tab=overview"><img src="./assets/metrics/calendar.svg" width="440" alt="Public commit calendar. The graphic labels its date range and latest update."></a>
+  <a href="https://github.com/ToxicityRadius?tab=overview"><img src="./assets/metrics/calendar.svg" width="400" alt="Public commit calendar. The graphic labels its date range and latest update."></a>
 </p>
 
 <sub>Generated graphics powered by [Metrics](https://github.com/lowlighter/metrics). [Profile maintenance](./docs/PROFILE.md).</sub>
