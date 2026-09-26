@@ -4,7 +4,7 @@
 <rect width="480" height="254" rx="12" fill="var(--bg,#f3f8fc)"/>
 <text class="ink" x="24" y="36" font-size="23" font-weight="650" fill="var(--ink,#10243c)">Public commit calendar</text>
 <text class="muted" x="24" y="60" font-size="14" fill="var(--muted,#435c75)">29 Jun – 26 Sep 2026 · public repositories only</text>
-<text class="accent" x="24" y="112" font-size="40" font-weight="650" fill="var(--accent,#00798e)">57</text>
+<text class="accent" x="24" y="112" font-size="40" font-weight="650" fill="var(--accent,#00798e)">60</text>
 <text class="muted" x="145" y="108" font-size="14" fill="var(--muted,#435c75)">public commits · past 90 days</text>
 <g><title>2026-06-29: 3 public commits</title><rect x="58" y="147" width="20" height="12" rx="2" fill="#38bdf8"/></g>
 <g><title>2026-06-30: 0 public commits</title><rect x="58" y="161" width="20" height="12" rx="2" fill="#d6e3ed"/></g>
@@ -95,7 +95,7 @@
 <g><title>2026-09-23: 0 public commits</title><rect x="370" y="175" width="20" height="12" rx="2" fill="#d6e3ed"/></g>
 <g><title>2026-09-24: 0 public commits</title><rect x="370" y="189" width="20" height="12" rx="2" fill="#d6e3ed"/></g>
 <g><title>2026-09-25: 0 public commits</title><rect x="370" y="203" width="20" height="12" rx="2" fill="#d6e3ed"/></g>
-<g><title>2026-09-26: 4 public commits</title><rect x="370" y="217" width="20" height="12" rx="2" fill="#38bdf8"/></g>
+<g><title>2026-09-26: 7 public commits</title><rect x="370" y="217" width="20" height="12" rx="2" fill="#38bdf8"/></g>
 <text class="muted" x="24" y="143" font-size="11" fill="var(--muted,#435c75)">S</text>
 <text class="muted" x="24" y="175" font-size="11" fill="var(--muted,#435c75)">W</text>
 <text class="muted" x="24" y="207" font-size="11" fill="var(--muted,#435c75)">S</text>
