@@ -126,7 +126,7 @@ jobs:
           plugins_errors_fatal: yes
           retries: 1
           plugin_repositories: yes
-          plugin_repositories_featured: ToxicityRadius/FormProof, ToxicityRadius/IoT-Competition, ToxicityRadius/toxicityradius.github.io
+          plugin_repositories_featured: ToxicityRadius/FormProof, ToxicityRadius/Student-Advising-Portal, ToxicityRadius/toxicityradius.github.io
           plugin_repositories_order: featured
 
       - name: Public commit calendar
