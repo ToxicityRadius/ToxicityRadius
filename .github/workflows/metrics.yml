@@ -10,11 +10,15 @@ on:
       - '.github/workflows/metrics.yml'
       - 'assets/metrics.css'
       - 'scripts/publish_metrics.py'
+      - 'scripts/public_activity.py'
+      - 'scripts/public_calendar.py'
   pull_request:
     paths:
       - '.github/workflows/metrics.yml'
       - 'assets/metrics.css'
       - 'scripts/publish_metrics.py'
+      - 'scripts/public_activity.py'
+      - 'scripts/public_calendar.py'
 
 permissions:
   contents: read
@@ -29,6 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - run: python3 scripts/publish_metrics.py --self-test
+      - run: python3 scripts/public_activity.py --self-test
       - run: python3 scripts/public_calendar.py --self-test
 
   render:
@@ -67,26 +72,6 @@ jobs:
           echo 'css<<METRICS_CSS' >> "$GITHUB_OUTPUT"
           cat assets/metrics.css >> "$GITHUB_OUTPUT"
           echo 'METRICS_CSS' >> "$GITHUB_OUTPUT"
-
-      - name: Public activity
-        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # latest stable, verified 2026-09-26
-        with:
-          user: ToxicityRadius
-          token: ${{ secrets.METRICS_TOKEN }}
-          filename: activity.svg
-          output_action: none
-          base: metadata
-          config_timezone: Asia/Manila
-          config_animations: no
-          extras_css: ${{ steps.style.outputs.css }}
-          plugins_errors_fatal: yes
-          retries: 1
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 30
-          plugin_activity_visibility: public
-          plugin_activity_timestamps: yes
-          plugin_activity_skipped: ToxicityRadius/ToxicityRadius
 
       - name: Repository languages
         uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
@@ -149,7 +134,8 @@ jobs:
           GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
         run: |
           mkdir -p "$RUNNER_TEMP/profile-metrics"
-          cp /metrics_renders/activity.svg /metrics_renders/languages.svg /metrics_renders/contributions.svg /metrics_renders/repositories.svg "$RUNNER_TEMP/profile-metrics/"
+          cp /metrics_renders/languages.svg /metrics_renders/contributions.svg /metrics_renders/repositories.svg "$RUNNER_TEMP/profile-metrics/"
+          python3 scripts/public_activity.py "$RUNNER_TEMP/profile-metrics/activity.svg"
           python3 scripts/public_calendar.py "$RUNNER_TEMP/profile-metrics/calendar.svg"
 
       - name: Validate all renders before publishing

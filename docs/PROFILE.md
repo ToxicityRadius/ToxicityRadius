@@ -30,9 +30,10 @@ repositories. The initial calendar and contribution totals cover the past 90 day
 the graph labels that range. Activity shows recent public events, excluding this
 profile repository so graphic refreshes do not dominate the list.
 
-Once enabled, lowlighter/Metrics replaces these snapshots with its activity,
-languages, notable contributions, and featured repositories. The calendar is
-generated separately from public repository contributions, so profile settings
+Once enabled, lowlighter/Metrics replaces the language, notable-contribution,
+and featured-repository snapshots. Recent activity and the calendar are
+generated separately from GitHub's public events and public repository
+contributions, so profile settings
 about private contribution visibility cannot add private totals to it. Counts and
 time ranges may differ from the initial snapshots; language shares describe
 repository contents, not proficiency.
@@ -41,8 +42,9 @@ The calendar query uses only public repository contribution groups, discards any
 group marked private, and stops without publishing if GitHub returns incomplete
 history. The private-contributions profile preference does not affect it.
 
-The four Metrics images and public calendar are gathered in the runner's temporary
-workspace before any tracked image is replaced. Plugin or calendar failures are fatal.
+The three Metrics images, public activity card, and calendar are gathered in the
+runner's temporary workspace before any tracked image is replaced. Any data or
+render failure is fatal.
 `scripts/publish_metrics.py` checks the complete set for
 missing, malformed, empty, and error renders; only a successful full set is committed.
 Push triggers watch workflow/configuration sources, not the generated SVG paths.
