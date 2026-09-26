@@ -1,6 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="480" height="362" viewBox="0 0 480 362" role="img" font-family="Segoe UI, Helvetica, Arial, sans-serif">
-<title>Languages in use: public GitHub snapshot, 26 Sep 2026</title>
-<style>svg{--bg:#f3f8fc;--ink:#10243c;--muted:#435c75;--accent:#00798e;--line:#d6e3ed;--soft:#d9edf1}
-@media(prefers-color-scheme:dark){svg{--bg:#101e31;--ink:#edf5ff;--muted:#b4c6db;--accent:#67e8f9;--line:#30465e;--soft:#21465a}}</style>
-<rect x="0" y="0" width="480" height="362" rx="12" fill="var(--bg)"/><text x="26" y="41" font-size="23" fill="var(--ink)" font-weight="650" >Languages in use</text><text x="26" y="68" font-size="14" fill="var(--muted)" font-weight="400" >Share of bytes · public, non-fork repositories</text><text x="26" y="103" font-size="14" fill="var(--ink)" font-weight="500" >Jupyter Notebook</text><text x="453" y="103" font-size="14" fill="var(--muted)" font-weight="400" text-anchor="end">61.2%</text><rect x="26" y="112" width="428" height="5" rx="2" fill="var(--line)"/><rect x="26" y="112" width="261.7760404324338" height="5" rx="2" fill="#0891b2"/><text x="26" y="138" font-size="14" fill="var(--ink)" font-weight="500" >JavaScript</text><text x="453" y="138" font-size="14" fill="var(--muted)" font-weight="400" text-anchor="end">25.9%</text><rect x="26" y="147" width="428" height="5" rx="2" fill="var(--line)"/><rect x="26" y="147" width="111.01710133377634" height="5" rx="2" fill="#38bdf8"/><text x="26" y="173" font-size="14" fill="var(--ink)" font-weight="500" >Python</text><text x="453" y="173" font-size="14" fill="var(--muted)" font-weight="400" text-anchor="end">4.0%</text><rect x="26" y="182" width="428" height="5" rx="2" fill="var(--line)"/><rect x="26" y="182" width="17.184072892420524" height="5" rx="2" fill="#0284c7"/><text x="26" y="208" font-size="14" fill="var(--ink)" font-weight="500" >HTML</text><text x="453" y="208" font-size="14" fill="var(--muted)" font-weight="400" text-anchor="end">2.5%</text><rect x="26" y="217" width="428" height="5" rx="2" fill="var(--line)"/><rect x="26" y="217" width="10.63821802545201" height="5" rx="2" fill="#6366f1"/><text x="26" y="243" font-size="14" fill="var(--ink)" font-weight="500" >CSS</text><text x="453" y="243" font-size="14" fill="var(--muted)" font-weight="400" text-anchor="end">2.2%</text><rect x="26" y="252" width="428" height="5" rx="2" fill="var(--line)"/><rect x="26" y="252" width="9.581672415848038" height="5" rx="2" fill="#14b8a6"/><text x="26" y="278" font-size="14" fill="var(--ink)" font-weight="500" >TypeScript</text><text x="453" y="278" font-size="14" fill="var(--muted)" font-weight="400" text-anchor="end">1.9%</text><rect x="26" y="287" width="428" height="5" rx="2" fill="var(--line)"/><rect x="26" y="287" width="8.108692635187229" height="5" rx="2" fill="#94a3b8"/><rect x="26" y="315" width="428" height="1" rx="0" fill="var(--line)"/><text x="26" y="340" font-size="12" fill="var(--muted)" font-weight="500" letter-spacing="0.6">PUBLIC DATA / 26 SEP 2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="206" class=" no-animations">
+    <defs>
+        <style/>
+    </defs>
+    <style>@keyframes animation-gauge{0%{stroke-dasharray:0 329}}@keyframes animation-rainbow{0%,to{color:#7f00ff;fill:#7f00ff}14%{color:#a933ff;fill:#a933ff}29%{color:#007fff;fill:#007fff}43%{color:#00ff7f;fill:#00ff7f}57%{color:#ff0;fill:#ff0}71%{color:#ff7f00;fill:#ff7f00}86%{color:red;fill:red}}svg{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:14px;color:#777}h1,h2,h3{margin:8px 0 2px;padding:0;color:#0366d6}h1{font-size:20px;font-weight:700}h2,h3{font-weight:400}h1 svg,h2 svg,h3 svg{fill:currentColor}h2{font-size:16px}h3{font-size:14px}section&gt;.field{margin-left:5px;margin-right:5px}.field{display:flex;align-items:center;margin-bottom:2px;white-space:nowrap}.field svg{margin:0 8px;fill:#959da5;flex-shrink:0}.row{display:flex;flex-wrap:wrap}.row section{flex:1 1 0}.column{display:flex;flex-direction:column;align-items:center}#metrics-end,.fill-width{width:100%}svg.bar{margin:4px 0}.field.language{margin:0 8px;flex-grow:0}.field.language.details,.field.language.details small{display:flex;justify-content:space-between}.field.language.details small{color:#666;text-align:right}.field.language.details small&gt;*,.field.language.details&gt;*{flex:1 1 0}.field.language.details small&gt;:not(:last-child){margin-right:6px}footer{margin-top:8px;font-size:10px;font-style:italic;color:#666;text-align:right;display:flex;flex-direction:column;justify-content:flex-end;padding:0 4px}:root{--color-calendar-graph-day-bg:#ebedf0;--color-calendar-graph-day-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L1-bg:#9be9a8;--color-calendar-graph-day-L2-bg:#40c463;--color-calendar-graph-day-L3-bg:#30a14e;--color-calendar-graph-day-L4-bg:#216e39;--color-calendar-halloween-graph-day-L1-bg:#ffee4a;--color-calendar-halloween-graph-day-L2-bg:#ffc501;--color-calendar-halloween-graph-day-L3-bg:#fe9600;--color-calendar-halloween-graph-day-L4-bg:#03001c;--color-calendar-winter-graph-day-L1-bg:#0a3069;--color-calendar-winter-graph-day-L2-bg:#0969da;--color-calendar-winter-graph-day-L3-bg:#54aeff;--color-calendar-winter-graph-day-L4-bg:#b6e3ff;--color-calendar-graph-day-L4-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L3-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L2-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L1-border:rgba(27,31,35,0.06)}.no-animations *{transition-delay:0s!important;transition-duration:0s!important;animation-delay:-.0001s!important;animation-duration:0s!important;animation-play-state:paused!important;caret-color:transparent!important}</style>
+    <style>/* A fixed canvas keeps every card legible in both GitHub themes. */
+svg { background: #f3f8fc; color: #344b63; }
+.items-wrapper { padding: 12px; }
+.items-wrapper ARCHITECTURE.md CODE_OF_CONDUCT.md CONTRIBUTING.md Dockerfile LICENSE README.md SECURITY.md action.yml package-lock.json package.json settings.example.json source tests vercel.json { color: inherit !important; }
+.items-wrapper h1, .items-wrapper h2, .items-wrapper h3 { color: #00788e !important; }
+@media (prefers-color-scheme: dark) {
+ svg { background: #101e31; color: #c0d0e3; }
+ .items-wrapper h1, .items-wrapper h2, .items-wrapper h3 { color: #67e8f9 !important; }
+}</style>
+    <foreignObject x="0" y="0" width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" class="items-wrapper">
+            <section>
+                <h2 class="field">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd" d="M1.5 2.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v8.5a.25.25 0 01-.25.25h-6.5a.75.75 0 00-.53.22L4.5 14.44v-2.19a.75.75 0 00-.75-.75h-2a.25.25 0 01-.25-.25v-8.5zM1.75 1A1.75 1.75 0 000 2.75v8.5C0 12.216.784 13 1.75 13H3v1.543a1.457 1.457 0 002.487 1.03L8.061 13h6.189A1.75 1.75 0 0016 11.25v-8.5A1.75 1.75 0 0014.25 1H1.75zm5.03 3.47a.75.75 0 010 1.06L5.31 7l1.47 1.47a.75.75 0 01-1.06 1.06l-2-2a.75.75 0 010-1.06l2-2a.75.75 0 011.06 0zm2.44 0a.75.75 0 000 1.06L10.69 7 9.22 8.47a.75.75 0 001.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0z"/>
+                    </svg>
+                    12 Languages
+                </h2>
+            </section>
+            <section class="column">
+                <h3 class="field">Most used languages</h3>
+                <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="460" height="8">
+                    <mask id="languages-bar">
+                        <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
+                    </mask>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="287.7614699549146" height="8" fill="#DA5B0B"/>
+                    <rect mask="url(#languages-bar)" x="287.7614699549146" y="0" width="122.03731180733017" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="409.7987817622448" y="0" width="19.03732259910983" height="8" fill="#3572A5"/>
+                    <rect mask="url(#languages-bar)" x="428.8361043613546" y="0" width="11.694230119945125" height="8" fill="#e34c26"/>
+                    <rect mask="url(#languages-bar)" x="440.53033448129975" y="0" width="10.556056357756745" height="8" fill="#663399"/>
+                    <rect mask="url(#languages-bar)" x="451.08639083905643" y="0" width="8.913609160943537" height="8" fill="#3178c6"/>
+                </svg>
+                <div class="row fill-width">
+                    <section>
+                        <div class="field language details">
+                            <div class="field">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path fill="#DA5B0B" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                </svg>
+                                Jupyter Notebook
+                            </div>
+                            <small>
+                                <div>62.56%</div>
+                            </small>
+                        </div>
+                        <div class="field language details">
+                            <div class="field">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path fill="#3572A5" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                </svg>
+                                Python
+                            </div>
+                            <small>
+                                <div>4.14%</div>
+                            </small>
+                        </div>
+                        <div class="field language details">
+                            <div class="field">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path fill="#663399" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                </svg>
+                                CSS
+                            </div>
+                            <small>
+                                <div>2.29%</div>
+                            </small>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="field language details">
+                            <div class="field">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path fill="#f1e05a" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                </svg>
+                                JavaScript
+                            </div>
+                            <small>
+                                <div>26.53%</div>
+                            </small>
+                        </div>
+                        <div class="field language details">
+                            <div class="field">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path fill="#e34c26" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                </svg>
+                                HTML
+                            </div>
+                            <small>
+                                <div>2.54%</div>
+                            </small>
+                        </div>
+                        <div class="field language details">
+                            <div class="field">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path fill="#3178c6" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                </svg>
+                                TypeScript
+                            </div>
+                            <small>
+                                <div>1.94%</div>
+                            </small>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <footer>
+                <span>These metrics do not include all private contributions</span>
+                <span>Last updated 26 Sept 2026, 17:23:43 (timezone Asia/Manila) with lowlighter/metrics@3.34.0</span>
+            </footer>
+        </div>
+        <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
+    </foreignObject>
 </svg>
