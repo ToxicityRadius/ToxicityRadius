@@ -10,10 +10,7 @@ three verified public project links, and five public-data graphics.
    date that you can recognize later. No private repository access is needed.
 2. Save it as `METRICS_TOKEN` in this repository's Settings → Secrets and variables
    → Actions. Never put it in a file, commit, issue, or chat.
-3. On your GitHub profile, leave **Contribution settings → Private contributions**
-   disabled. Even a scope-less token can receive hidden contribution totals when
-   that setting is enabled; the workflow checks for them before rendering.
-4. After this workflow is on `main`, open Actions → **Profile metrics** → **Run workflow**.
+3. After this workflow is on `main`, open Actions → **Profile metrics** → **Run workflow**.
    Confirm that `validate` and `render` pass and that the bot commits five SVGs.
 
 The schedule is daily at approximately **08:23 Asia/Manila**. GitHub can delay or
@@ -34,13 +31,19 @@ the graph labels that range. Activity shows recent public events, excluding this
 profile repository so graphic refreshes do not dominate the list.
 
 Once enabled, lowlighter/Metrics replaces these snapshots with its activity,
-languages, notable contributions, featured repositories, and full-year isometric
-calendar renders. Each includes generation metadata. Counts and time ranges may
-differ from the initial snapshots; neither language shares nor commit counts are
-presented as a measure of proficiency.
+languages, notable contributions, and featured repositories. The calendar is
+generated separately from public repository contributions, so profile settings
+about private contribution visibility cannot add private totals to it. Counts and
+time ranges may differ from the initial snapshots; language shares describe
+repository contents, not proficiency.
 
-All five images render into `/metrics_renders` before any tracked image is replaced.
-Plugin failures are fatal. `scripts/publish_metrics.py` checks the complete set for
+The calendar query uses only public repository contribution groups, discards any
+group marked private, and stops without publishing if GitHub returns incomplete
+history. The private-contributions profile preference does not affect it.
+
+The four Metrics images and public calendar are gathered in the runner's temporary
+workspace before any tracked image is replaced. Plugin or calendar failures are fatal.
+`scripts/publish_metrics.py` checks the complete set for
 missing, malformed, empty, and error renders; only a successful full set is committed.
 Push triggers watch workflow/configuration sources, not the generated SVG paths.
 Updates are serialized and use ordinary pushes; no force push is performed.
