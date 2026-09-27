@@ -8,17 +8,13 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/metrics.yml'
-      - 'assets/metrics.css'
+      - 'README.md'
       - 'scripts/publish_metrics.py'
-      - 'scripts/public_activity.py'
-      - 'scripts/public_calendar.py'
   pull_request:
     paths:
       - '.github/workflows/metrics.yml'
-      - 'assets/metrics.css'
+      - 'README.md'
       - 'scripts/publish_metrics.py'
-      - 'scripts/public_activity.py'
-      - 'scripts/public_calendar.py'
 
 permissions:
   contents: read
@@ -33,8 +29,6 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - run: python3 scripts/publish_metrics.py --self-test
-      - run: python3 scripts/public_activity.py --self-test
-      - run: python3 scripts/public_calendar.py --self-test
 
   render:
     if: github.event_name != 'pull_request'
@@ -57,7 +51,7 @@ jobs:
           fi
           headers=$(gh api --include user)
           if ! grep -qi '^x-oauth-scopes:' <<< "$headers"; then
-            echo '::error::Use a classic token with no scopes for this public-only gallery.'
+            echo '::error::Use a classic token with no scopes for this public-only graphic.'
             exit 1
           fi
           scopes=$(grep -i '^x-oauth-scopes:' <<< "$headers" | cut -d: -f2- | tr -d '[:space:]')
@@ -65,25 +59,17 @@ jobs:
             echo '::error::METRICS_TOKEN must have no scopes. The workflow uses GITHUB_TOKEN separately to commit.'
             exit 1
           fi
-      - name: Load shared styles
-        id: style
-        shell: bash
-        run: |
-          echo 'css<<METRICS_CSS' >> "$GITHUB_OUTPUT"
-          cat assets/metrics.css >> "$GITHUB_OUTPUT"
-          echo 'METRICS_CSS' >> "$GITHUB_OUTPUT"
-
-      - name: Repository languages
+      - name: Render Classic profile metrics
         uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
         with:
           user: ToxicityRadius
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: languages.svg
+          filename: profile.svg
           output_action: none
-          base: metadata
+          template: classic
+          base: header, repositories
           config_timezone: Asia/Manila
           config_animations: no
-          extras_css: ${{ steps.style.outputs.css }}
           plugins_errors_fatal: yes
           retries: 1
           repositories_forks: no
@@ -92,59 +78,27 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_details: percentage
           plugin_languages_indepth: no
-
-      - name: Public contributions
-        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
-        with:
-          user: ToxicityRadius
-          token: ${{ secrets.METRICS_TOKEN }}
-          filename: contributions.svg
-          output_action: none
-          base: metadata
-          config_timezone: Asia/Manila
-          config_animations: no
-          extras_css: ${{ steps.style.outputs.css }}
-          plugins_errors_fatal: yes
-          retries: 1
           plugin_notable: yes
           plugin_notable_from: all
           plugin_notable_self: yes
           plugin_notable_types: commit, pull_request, issue
           plugin_notable_repositories: yes
-
-      - name: Featured repositories
-        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
-        with:
-          user: ToxicityRadius
-          token: ${{ secrets.METRICS_TOKEN }}
-          filename: repositories.svg
-          output_action: none
-          base: metadata
-          config_timezone: Asia/Manila
-          config_animations: no
-          extras_css: ${{ steps.style.outputs.css }}
-          plugins_errors_fatal: yes
-          retries: 1
           plugin_repositories: yes
           plugin_repositories_featured: ToxicityRadius/FormProof, ToxicityRadius/Student-Advising-Portal, ToxicityRadius/toxicityradius.github.io
           plugin_repositories_order: featured
 
-      - name: Public commit calendar
-        env:
-          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+      - name: Stage Classic graphic
         run: |
           mkdir -p "$RUNNER_TEMP/profile-metrics"
-          cp /metrics_renders/languages.svg /metrics_renders/contributions.svg /metrics_renders/repositories.svg "$RUNNER_TEMP/profile-metrics/"
-          python3 scripts/public_activity.py "$RUNNER_TEMP/profile-metrics/activity.svg"
-          python3 scripts/public_calendar.py "$RUNNER_TEMP/profile-metrics/calendar.svg"
+          cp /metrics_renders/profile.svg "$RUNNER_TEMP/profile-metrics/profile.svg"
 
-      - name: Validate all renders before publishing
+      - name: Validate before publishing
         run: python3 scripts/publish_metrics.py "$RUNNER_TEMP/profile-metrics" assets/metrics
 
       - name: Commit successful update
         shell: bash
         run: |
-          git add -- assets/metrics/*.svg
+          git add -- assets/metrics/profile.svg
           if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

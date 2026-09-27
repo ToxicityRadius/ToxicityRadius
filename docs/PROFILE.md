@@ -1,73 +1,37 @@
 # Profile maintenance
 
-The README contains a responsive navy/cyan introduction, the original profile photo,
-three verified public project links, and five public-data graphics.
+The README has a plain introduction, three public project links, and one
+[Metrics Classic](https://github.com/lowlighter/metrics/blob/latest/source/templates/classic/README.md)
+graphic. The original photo remains in `assets/profile-photo.png` but is not
+shown on the profile.
 
-## Enable automatic updates
+## Automatic updates
 
-1. Create a **classic personal access token with no scopes** in GitHub Settings →
-   Developer settings → Personal access tokens. Give it a description and expiry
-   date that you can recognize later. No private repository access is needed.
-2. Save it as `METRICS_TOKEN` in this repository's Settings → Secrets and variables
-   → Actions. Never put it in a file, commit, issue, or chat.
-3. After this workflow is on `main`, open Actions → **Profile metrics** → **Run workflow**.
-   Confirm that `validate` and `render` pass and that the bot commits five SVGs.
+The workflow renders `assets/metrics/profile.svg` daily at approximately
+08:23 Asia/Manila and can also be run manually from Actions → Profile metrics.
+It combines a public account overview, repository languages, notable
+contributions, and featured repositories. It does not render activity or a
+contribution calendar.
 
-The schedule is daily at approximately **08:23 Asia/Manila**. GitHub can delay or
-disable scheduled workflows in inactive repositories; a manual run is available.
-An expired/missing token fails with instructions while retaining the last images.
+The repository secret `METRICS_TOKEN` must be a classic personal access token
+with no scopes. It reads public GitHub data only. The workflow's separate
+`GITHUB_TOKEN` commits the SVG with `contents: write`. Never put either token in
+a file, commit, issue, or chat.
 
-`METRICS_TOKEN` reads public account data. GitHub's automatic `GITHUB_TOKEN`, with
-`contents: write`, commits the output. Do not give the personal token extra scopes.
-
-## Existing snapshots and future renders
-
-The initial graphics are dated **26 September 2026** and use GitHub public repository,
-language, event, and contribution data. They are real snapshots, not sample stats.
-The snapshot collector excluded every repository marked private before using or
-saving contribution data. Language shares sum language bytes in public, non-fork
-repositories. The initial calendar and contribution totals cover the past 90 days;
-the graph labels that range. Activity shows recent public events, excluding this
-profile repository so graphic refreshes do not dominate the list.
-
-Once enabled, lowlighter/Metrics replaces the language, notable-contribution,
-and featured-repository snapshots. Recent activity and the calendar are
-generated separately from GitHub's public events and public repository
-contributions, so profile settings
-about private contribution visibility cannot add private totals to it. Counts and
-time ranges may differ from the initial snapshots; language shares describe
-repository contents, not proficiency.
-
-The calendar query uses only public repository contribution groups, discards any
-group marked private, and stops without publishing if GitHub returns incomplete
-history. The private-contributions profile preference does not affect it.
-
-The three Metrics images, public activity card, and calendar are gathered in the
-runner's temporary workspace before any tracked image is replaced. Any data or
-render failure is fatal.
-`scripts/publish_metrics.py` checks the complete set for
-missing, malformed, empty, and error renders; only a successful full set is committed.
-Push triggers watch workflow/configuration sources, not the generated SVG paths.
-Updates are serialized and use ordinary pushes; no force push is performed.
+The workflow validates the completed SVG before replacing the tracked graphic.
+If the token expires, rendering fails, or the output is malformed, the last
+committed graphic remains available. The SVG is excluded from push triggers so
+an update does not start another workflow run.
 
 ## Edit and verify
 
-- Edit profile copy and links in `README.md`.
-- Edit the self-contained SVG hero sources `dark.svg`, `light.svg`, and the mobile
-  variants in `assets/`. Each embeds the unchanged `assets/profile-photo.png`.
-- Edit generated card colors in `assets/metrics.css`.
-- Change plugins, featured repositories, or the schedule in `.github/workflows/metrics.yml`.
+- Edit the introduction and project links in `README.md`.
+- Change the Classic template options, featured repositories, or schedule in
+  `.github/workflows/metrics.yml`.
+- Run `python scripts/publish_metrics.py --self-test` to check that failed
+  renders preserve the previous graphic.
+- After workflow changes, run Profile metrics manually and confirm that both
+  jobs pass and the generated SVG renders in GitHub's light and dark themes at
+  desktop and phone widths. Check the project and contact links too.
 
-Run the focused failure-preservation check locally:
-
-```powershell
-python scripts/publish_metrics.py --self-test
-```
-
-Preview the README on GitHub in both themes at desktop and phone widths. Confirm
-that the mobile hero is selected, cards wrap without horizontal scrolling, images
-load, and project/contact links resolve. After the first authenticated Metrics run,
-repeat that visual check because upstream plugin layouts differ from the snapshots.
-
-Upstream references: [Action setup](https://github.com/lowlighter/metrics/blob/latest/.github/readme/partials/documentation/setup/action.md)
-and [plugin documentation](https://github.com/lowlighter/metrics/tree/latest/source/plugins).
+The action is configured using [Metrics' GitHub Action documentation](https://github.com/lowlighter/metrics/blob/latest/.github/readme/partials/documentation/setup/action.md).
