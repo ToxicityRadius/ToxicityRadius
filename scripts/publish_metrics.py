@@ -1,4 +1,4 @@
-"""Validate the Classic render before replacing the checked-in graphic."""
+"""Validate both Classic theme renders before replacing the checked-in graphics."""
 
 from pathlib import Path
 import shutil
@@ -6,7 +6,7 @@ import sys
 import tempfile
 import xml.etree.ElementTree as ET
 
-NAMES = ("profile",)
+NAMES = ("profile-light", "profile-dark")
 
 
 def publish(source: Path, target: Path) -> None:
@@ -35,7 +35,7 @@ def self_test() -> None:
             (target / f"{name}.svg").write_text("last good version", encoding="utf-8")
         for invalid in ("broken XML", '<svg xmlns="http://www.w3.org/2000/svg"/>',
                         '<svg xmlns="http://www.w3.org/2000/svg"><text class="field error">Error</text></svg>'):
-            (source / "profile.svg").write_text(invalid, encoding="utf-8")
+            (source / "profile-dark.svg").write_text(invalid, encoding="utf-8")
             try:
                 publish(source, target)
             except (ValueError, ET.ParseError):
@@ -43,7 +43,7 @@ def self_test() -> None:
             else:
                 raise AssertionError("Invalid renders must fail")
             assert all(p.read_text(encoding="utf-8") == "last good version" for p in target.iterdir())
-        (source / "profile.svg").unlink()
+        (source / "profile-dark.svg").unlink()
         try:
             publish(source, target)
         except FileNotFoundError:
@@ -51,10 +51,10 @@ def self_test() -> None:
         else:
             raise AssertionError("Missing render must fail")
         assert all(p.read_text(encoding="utf-8") == "last good version" for p in target.iterdir())
-        (source / "profile.svg").write_text(good, encoding="utf-8")
+        (source / "profile-dark.svg").write_text(good, encoding="utf-8")
         publish(source, target)
         assert all(p.read_text(encoding="utf-8") == good for p in target.iterdir())
-    print("PASS: invalid renders preserve the previous graphic; a valid render publishes.")
+    print("PASS: invalid or missing second renders preserve both previous graphics; valid renders publish both.")
 
 
 if __name__ == "__main__":

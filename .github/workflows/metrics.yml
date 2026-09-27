@@ -59,16 +59,26 @@ jobs:
             echo '::error::METRICS_TOKEN must have no scopes. The workflow uses GITHUB_TOKEN separately to commit.'
             exit 1
           fi
-      - name: Render Classic profile metrics
+          restricted=$(gh api graphql -f query='query { user(login: "ToxicityRadius") { contributionsCollection { restrictedContributionsCount } } }' --jq '.data.user.contributionsCollection.restrictedContributionsCount')
+          if [[ "$restricted" != 0 ]]; then
+            echo '::error::Disable private contribution totals in GitHub profile contribution settings to keep the calendar public-only.'
+            exit 1
+          fi
+      - name: Render Classic light profile metrics
         uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
         with:
           user: ToxicityRadius
           token: ${{ secrets.METRICS_TOKEN }}
-          filename: profile.svg
+          filename: profile-light.svg
           output_action: none
           template: classic
           base: repositories
-          extras_css: 'svg { background: #fff; }'
+          extras_css: |
+            svg { color: #24292f; }
+            svg:root { background: #ffffff; }
+            h2, h3, .repository .name span:first-child { color: #0969da; }
+            .repository .description, .repository .infos, .repository .name span:last-child,
+            .field.language.details small, .field.license.details small { color: #57606a; }
           config_timezone: Asia/Manila
           config_animations: no
           plugins_errors_fatal: yes
@@ -86,11 +96,49 @@ jobs:
           plugin_repositories: yes
           plugin_repositories_featured: ToxicityRadius/FormProof, ToxicityRadius/Student-Advising-Portal, ToxicityRadius/toxicityradius.github.io
           plugin_repositories_order: featured
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
 
-      - name: Stage Classic graphic
+      - name: Render Classic dark profile metrics
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        with:
+          user: ToxicityRadius
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename: profile-dark.svg
+          output_action: none
+          template: classic
+          base: repositories
+          extras_css: |
+            svg { color: #e6edf3; }
+            svg:root { background: #0d1117; }
+            h2, h3, .repository .name span:first-child { color: #58a6ff; }
+            .repository .description, .repository .infos, .repository .name span:last-child,
+            .field.language.details small, .field.license.details small { color: #b1bac4; }
+          config_timezone: Asia/Manila
+          config_animations: no
+          plugins_errors_fatal: yes
+          retries: 1
+          repositories_forks: no
+          plugin_languages: yes
+          plugin_languages_limit: 6
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_indepth: no
+          plugin_notable: yes
+          plugin_notable_from: all
+          plugin_notable_self: no
+          plugin_notable_types: commit, pull_request, issue
+          plugin_repositories: yes
+          plugin_repositories_featured: ToxicityRadius/FormProof, ToxicityRadius/Student-Advising-Portal, ToxicityRadius/toxicityradius.github.io
+          plugin_repositories_order: featured
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+
+      - name: Stage Classic graphics
         run: |
           mkdir -p "$RUNNER_TEMP/profile-metrics"
-          cp /metrics_renders/profile.svg "$RUNNER_TEMP/profile-metrics/profile.svg"
+          cp /metrics_renders/profile-light.svg "$RUNNER_TEMP/profile-metrics/profile-light.svg"
+          cp /metrics_renders/profile-dark.svg "$RUNNER_TEMP/profile-metrics/profile-dark.svg"
 
       - name: Validate before publishing
         run: python3 scripts/publish_metrics.py "$RUNNER_TEMP/profile-metrics" assets/metrics
@@ -98,7 +146,7 @@ jobs:
       - name: Commit successful update
         shell: bash
         run: |
-          git add -- assets/metrics/profile.svg
+          git add -- assets/metrics/profile-light.svg assets/metrics/profile-dark.svg
           if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

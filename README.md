@@ -26,6 +26,8 @@ A responsive home for my computer vision, data, and web projects. I designed and
 
 ## On GitHub
 
-<a href="./assets/metrics/profile.svg"><img src="./assets/metrics/profile.svg" width="100%" alt="Public GitHub overview, repository languages, notable contributions, and featured repositories for Dexter Soriano. Open the image to view it at full size."></a>
-
-<sub>[Explore all my repositories](https://github.com/ToxicityRadius?tab=repositories) · [Connect on LinkedIn](https://www.linkedin.com/in/dexter-aic-soriano-382063335/)</sub>
+<a href="./assets/metrics/profile-light.svg"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/metrics/profile-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/metrics/profile-light.svg">
+  <img src="./assets/metrics/profile-light.svg" width="480" alt="Public GitHub overview, languages, notable contributions, featured repositories, and a half-year isometric contribution calendar for Dexter Soriano. Open the image to view it at full size.">
+</picture></a>
