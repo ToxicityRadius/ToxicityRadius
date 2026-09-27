@@ -81,9 +81,8 @@ jobs:
           plugin_languages_indepth: no
           plugin_notable: yes
           plugin_notable_from: all
-          plugin_notable_self: yes
+          plugin_notable_self: no
           plugin_notable_types: commit, pull_request, issue
-          plugin_notable_repositories: yes
           plugin_repositories: yes
           plugin_repositories_featured: ToxicityRadius/FormProof, ToxicityRadius/Student-Advising-Portal, ToxicityRadius/toxicityradius.github.io
           plugin_repositories_order: featured
