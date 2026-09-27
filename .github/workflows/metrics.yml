@@ -67,7 +67,7 @@ jobs:
           filename: profile.svg
           output_action: none
           template: classic
-          base: header, repositories
+          base: repositories
           config_timezone: Asia/Manila
           config_animations: no
           plugins_errors_fatal: yes
