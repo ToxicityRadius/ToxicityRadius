@@ -68,7 +68,6 @@ jobs:
           output_action: none
           template: classic
           base: repositories
-          config_display: columns
           config_timezone: Asia/Manila
           config_animations: no
           plugins_errors_fatal: yes
