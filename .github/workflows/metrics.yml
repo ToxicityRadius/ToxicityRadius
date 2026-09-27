@@ -68,6 +68,7 @@ jobs:
           output_action: none
           template: classic
           base: repositories
+          extras_css: 'svg { background: #fff; }'
           config_timezone: Asia/Manila
           config_animations: no
           plugins_errors_fatal: yes

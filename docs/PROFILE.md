@@ -12,6 +12,8 @@ The workflow renders `assets/metrics/profile.svg` daily at approximately
 It combines a public account overview, repository languages, notable
 contributions, and featured repositories. It does not render activity or a
 contribution calendar.
+The graphic uses a white background so Classic's default text stays readable
+when GitHub is in dark mode.
 
 The repository secret `METRICS_TOKEN` must be a classic personal access token
 with no scopes. It reads public GitHub data only. The workflow's separate
