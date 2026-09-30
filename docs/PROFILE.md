@@ -16,7 +16,7 @@ The publisher creates light and dark SVG variants from the same validated render
 Both use transparent backgrounds, contrasting text and repository labels, and
 theme-appropriate calendar colors. GitHub's theme-specific image fragments select
 the matching graphic. The surrounding README uses GitHub's native theme colors.
-Both graphics display at 480px wide, scale down on smaller screens, and have
+Both graphics fill the README container width, scale with smaller screens, and have
 full-size links. Project descriptions appear in the graphic without a duplicate
 Selected work section.
 
