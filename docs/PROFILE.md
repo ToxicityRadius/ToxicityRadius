@@ -1,7 +1,7 @@
 # Profile maintenance
 
 The README has a concise introduction, portfolio and LinkedIn links, three
-project summaries with clickable public repository links, and one
+clickable public repository links below the graphic, and one
 [Metrics Classic](https://github.com/lowlighter/metrics/blob/latest/source/templates/classic/README.md)
 graphic. The original photo remains in `assets/profile-photo.png` but is not
 shown on the profile.
@@ -16,7 +16,9 @@ The publisher creates light and dark SVG variants from the same validated render
 Both use transparent backgrounds, contrasting text and repository labels, and
 theme-appropriate calendar colors. GitHub's theme-specific image fragments select
 the matching graphic. The surrounding README uses GitHub's native theme colors.
-Both graphics scale to the available width and have full-size links for smaller screens.
+Both graphics display at 480px wide, scale down on smaller screens, and have
+full-size links. Project descriptions appear in the graphic without a duplicate
+Selected work section.
 
 The repository secret `METRICS_TOKEN` must be a classic personal access token
 with no scopes. It reads public GitHub data only. The workflow's separate
