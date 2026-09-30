@@ -1,6 +1,7 @@
 # Profile maintenance
 
-The README has a plain introduction, three public project links, and one
+The README has a concise introduction, portfolio and LinkedIn links, three
+project summaries with clickable public repository links, and one
 [Metrics Classic](https://github.com/lowlighter/metrics/blob/latest/source/templates/classic/README.md)
 graphic. The original photo remains in `assets/profile-photo.png` but is not
 shown on the profile.
@@ -9,11 +10,12 @@ shown on the profile.
 
 The workflow renders `assets/metrics/profile.svg` daily at approximately
 08:23 Asia/Manila and can also be run manually from Actions → Profile metrics.
-It combines a public account overview, repository languages, notable
-contributions, and featured repositories. It does not render activity or a
-contribution calendar.
-The graphic uses a white background so Classic's default text stays readable
-when GitHub is in dark mode.
+It combines public repository statistics, a full-year isometric contribution
+calendar, repository languages, notable contributions, and featured repositories.
+The graphic uses an opaque white background with Classic's default dark text
+for consistent contrast in GitHub's light and dark modes. The surrounding README
+uses GitHub's native theme colors. The graphic scales to the available width and
+links to a full-size view for reading details on smaller screens.
 
 The repository secret `METRICS_TOKEN` must be a classic personal access token
 with no scopes. It reads public GitHub data only. The workflow's separate

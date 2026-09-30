@@ -1,6 +1,8 @@
 # Dexter Soriano
 
-I'm a **Computer Engineering student at TIP Manila, majoring in Data Science**. I build developer tools, web interfaces, and connected hardware projects.
+**Computer Engineering student · Data Science · TIP Manila**
+
+I build developer tools, web interfaces, and connected hardware projects, with a focus on useful software and clear user experiences.
 
 [**View my portfolio ↗**](https://toxicityradius.github.io/) &nbsp; · &nbsp; [**Connect on LinkedIn ↗**](https://www.linkedin.com/in/dexter-aic-soriano-382063335/)
 
@@ -8,24 +10,26 @@ I'm a **Computer Engineering student at TIP Manila, majoring in Data Science**. 
 
 ### [FormProof](https://github.com/ToxicityRadius/FormProof)
 
-A CLI for inspecting web accessibility issues and checking proposed repairs with before-and-after browser evidence. I built the inspection and repair workflow, source adapters, and regression checks.
+A CLI that inspects web accessibility issues and verifies repairs with before-and-after browser evidence. My work covers the inspection and repair workflow, source adapters, and regression checks.
 
 <sub>TypeScript · Playwright · axe-core · Developer tooling</sub>
 
 ### [Student Advising Portal](https://github.com/ToxicityRadius/Student-Advising-Portal)
 
-A full-stack academic advising platform for Computer Engineering programs, with role-based curriculum, student-record, and study-plan workflows. I contributed features across the platform, including grade handling, study-plan regeneration, and authentication and access-control improvements.
+A full-stack advising platform for Computer Engineering programs. I contributed grade handling, study-plan regeneration, and authentication and access-control improvements across its role-based workflows.
 
 <sub>React · Node.js · Express · PostgreSQL</sub>
 
 ### [Personal portfolio](https://github.com/ToxicityRadius/toxicityradius.github.io)
 
-A responsive home for my computer vision, data, and web projects. I designed and built the interface, project presentation, and interactions.
+A responsive home for my computer vision, data, and web projects. I designed and built its interface, project presentation, and interactions.
 
 <sub>HTML · CSS · JavaScript · Responsive design</sub>
 
-## On GitHub
+## GitHub at a glance
 
-<a href="./assets/metrics/profile.svg"><img src="./assets/metrics/profile.svg" width="100%" alt="Public GitHub overview, repository languages, notable contributions, and featured repositories for Dexter Soriano. Open the image to view it at full size."></a>
+Public repository statistics, a full-year contribution calendar, language usage, notable contributions, and featured projects. Updated daily.
 
-<sub>[Explore all my repositories](https://github.com/ToxicityRadius?tab=repositories) · [Connect on LinkedIn](https://www.linkedin.com/in/dexter-aic-soriano-382063335/)</sub>
+<a href="./assets/metrics/profile.svg"><img src="./assets/metrics/profile.svg" width="100%" alt="Dexter Soriano's public GitHub repository statistics, full-year isometric contribution calendar, most-used languages, notable contributions, and three featured repositories. Open the image to view it at full size."></a>
+
+<sub>[View the full-size graphic](./assets/metrics/profile.svg) · [Explore all my repositories](https://github.com/ToxicityRadius?tab=repositories)</sub>
