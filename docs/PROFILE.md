@@ -12,10 +12,11 @@ The workflow renders `assets/metrics/profile.svg` daily at approximately
 08:23 Asia/Manila and can also be run manually from Actions → Profile metrics.
 It combines public repository statistics, a full-year isometric contribution
 calendar, repository languages, notable contributions, and featured repositories.
-The graphic uses an opaque white background with Classic's default dark text
-for consistent contrast in GitHub's light and dark modes. The surrounding README
-uses GitHub's native theme colors. The graphic scales to the available width and
-links to a full-size view for reading details on smaller screens.
+The publisher creates light and dark SVG variants from the same validated render.
+Both use transparent backgrounds, contrasting text and repository labels, and
+theme-appropriate calendar colors. GitHub's theme-specific image fragments select
+the matching graphic. The surrounding README uses GitHub's native theme colors.
+Both graphics scale to the available width and have full-size links for smaller screens.
 
 The repository secret `METRICS_TOKEN` must be a classic personal access token
 with no scopes. It reads public GitHub data only. The workflow's separate

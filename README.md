@@ -30,6 +30,7 @@ A responsive home for my computer vision, data, and web projects. I designed and
 
 Public repository statistics, a full-year contribution calendar, language usage, notable contributions, and featured projects. Updated daily.
 
-<a href="./assets/metrics/profile.svg"><img src="./assets/metrics/profile.svg" width="100%" alt="Dexter Soriano's public GitHub repository statistics, full-year isometric contribution calendar, most-used languages, notable contributions, and three featured repositories. Open the image to view it at full size."></a>
+<a href="./assets/metrics/profile.svg#gh-light-mode-only"><img src="./assets/metrics/profile.svg#gh-light-mode-only" width="100%" alt="Dexter Soriano's public GitHub statistics, full-year calendar, languages, contributions, and featured repositories (light theme)."></a>
+<a href="./assets/metrics/profile-dark.svg#gh-dark-mode-only"><img src="./assets/metrics/profile-dark.svg#gh-dark-mode-only" width="100%" alt="Dexter Soriano's public GitHub statistics, full-year calendar, languages, contributions, and featured repositories (dark theme)."></a>
 
-<sub>[View the full-size graphic](./assets/metrics/profile.svg) · [Explore all my repositories](https://github.com/ToxicityRadius?tab=repositories)</sub>
+<sub>[Full-size light graphic](./assets/metrics/profile.svg) · [Full-size dark graphic](./assets/metrics/profile-dark.svg) · [Explore all my repositories](https://github.com/ToxicityRadius?tab=repositories)</sub>

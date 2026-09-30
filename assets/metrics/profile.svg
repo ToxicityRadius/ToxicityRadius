@@ -2359,4 +2359,8 @@
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
     </foreignObject>
-</svg>
+<style>svg { background: transparent; color: #1f2328; }
+    h2, h3, .repository .name span:first-child { color: #0969da; }
+    .field svg { fill: #57606a; }
+    .repository .name span:last-child, .repository .description, .repository .infos,
+    .field.language.details small, .field.license.details small { color: #57606a; }</style></svg>

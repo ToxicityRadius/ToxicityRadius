@@ -68,7 +68,6 @@ jobs:
           output_action: none
           template: classic
           base: repositories
-          extras_css: 'svg { background: #fff; }'
           config_timezone: Asia/Manila
           config_animations: no
           plugins_errors_fatal: yes
@@ -100,7 +99,7 @@ jobs:
       - name: Commit successful update
         shell: bash
         run: |
-          git add -- assets/metrics/profile.svg
+          git add -- assets/metrics/profile.svg assets/metrics/profile-dark.svg
           if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
